@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'comBC';
+  
+  valor1: string ='10';
+  valor2: string = '20';
+  resultadoP: number;
+
+  
 }
