@@ -39,4 +39,16 @@ export class AppComponent implements OnInit{
 
   }
 
+  condition(value:string){
+    this.screen = this.screen + value;
+    this.b = value;
+  }
+
+  clear(){
+
+  }
+  result(){
+    
+  }
+
 }
