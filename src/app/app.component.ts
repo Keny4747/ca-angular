@@ -5,50 +5,81 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit {
 
   screen = "";
-  a:any;
-  b:any;
-  c:any;
-  d="";
-  e:"";
+  a: any;
+  b: any;
+  c: any;
+  d = "";
+  e: "";
 
 
   ngOnInit(): void {
-    
+
   }
-  
+
   //Calculadora
 
-  enterValue(value:string){
-    
-    if ((this.b=="+")||(this.b=="-")||(this.b=="*")||(this.b=="/")) {
-      this.d= this.d+ value;
-      this.screen = this.screen +value;
-      this.c= this.d;
+  enterValue(value: string) {
 
-      console.log(this.b, this.c)
-    }else{
+    if ((this.b == "+") || (this.b == "-") || (this.b == "*") || (this.b == "/")) {
+      this.d = this.d + value;
+      this.screen = this.screen + value;
+      this.c = this.d;
+
+
+    } else {
 
       this.screen = this.screen + value;
       this.a = this.screen;
 
-      console.log(this.a)
+
     }
 
   }
 
-  condition(value:string){
+  condition(value: string) {
     this.screen = this.screen + value;
     this.b = value;
   }
 
-  clear(){
+  clear() {
+    this.screen = "";
+    this.a = "";
+    this.b = "";
+    this.c = "";
+    this.d = "";
 
   }
-  result(){
-    
+  result() {
+
+    switch (this.b) {
+
+      case '+':
+        this.screen = `${this.screen}= ${(parseInt(this.a) + parseInt(this.c)).toString()} `;
+        this.screen = (parseInt(this.screen) + parseInt(this.c)).toString();
+        break;
+
+      case '-':
+        this.screen = `${this.screen}= ${(parseInt(this.a) - parseInt(this.c)).toString()} `;
+        this.screen = (parseInt(this.screen) - parseInt(this.c)).toString();
+        break;
+
+      case '*':
+        this.screen = `${this.screen}= ${(parseInt(this.a) * parseInt(this.c)).toString()} `;
+        this.screen = (parseInt(this.screen) * parseInt(this.c)).toString();
+        
+        break;
+
+      case '/':
+        this.screen = `${this.screen}= ${(parseInt(this.a) / parseInt(this.c)).toString()} `;
+        this.screen = (parseInt(this.screen) / parseInt(this.c)).toString();
+        break;
+
+    }
+
+    /*this.clear();*/
   }
 
 }
