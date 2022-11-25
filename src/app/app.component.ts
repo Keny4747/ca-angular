@@ -129,7 +129,7 @@ export class AppComponent implements OnInit {
     this.arrayOperaciones.forEach((element:any)=>{
 
       this.conteneder.querySelector('.operation').innerText = element.operation;
-      this.conteneder.querySelector('.resultOperation').innerText = element.operation;
+      this.conteneder.querySelector('.resultOperation').innerText = element.resultado;
 
     })
       
