@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -13,6 +13,25 @@ export class AppComponent implements OnInit {
   c: any;
   d = "";
   e: "";
+
+  conteneder:any;
+  arrayOperaciones:any=[];
+  arrayResultado:any=[];
+  verOperaciones:any=[];
+  mostrarStorage:any;
+  buttonHistory:any;
+  btnActive="text-right";
+  calculadoraPos:any;
+  historyPos:any;
+  estiloPos1:string;
+  estiloPos2:string;
+
+  constructor(private rendere:Renderer2){
+
+  }
+
+@ViewChild('mostrarOperciones',{static:true}) mostrarOperaciones!:ElementRef;
+
 
 
   ngOnInit(): void {
@@ -72,14 +91,36 @@ export class AppComponent implements OnInit {
         
         break;
 
-      case '/':
+      default:
         this.screen = `${this.screen}= ${(parseInt(this.a) / parseInt(this.c)).toString()} `;
         this.screen = (parseInt(this.screen) / parseInt(this.c)).toString();
         break;
 
     }
 
-    /*this.clear();*/
+    this.clear();
   }
 
+  //Se crea de fomra dinámica el history mediante el DOM
+
+  crearHtml(operacion:string,resultado:string){
+    const mostrar = {
+      operacion,
+      resultado
+    }
+
+    var containerCard = document.createElement('div');
+    var verOperacion = document.createElement('p');
+    var verResultado = document.createElement('p');
+
+    containerCard.classList.add('conatienrCard');
+    verOperacion.classList.add('operation');
+    verResultado.classList.add('resultOperation');
+
+    containerCard.appendChild(verOperacion);
+    containerCard.appendChild(verResultado);
+   
+      
+  }
+  
 }
