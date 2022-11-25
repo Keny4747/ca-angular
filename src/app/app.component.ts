@@ -125,6 +125,15 @@ export class AppComponent implements OnInit {
     this.conteneder = containerCard;
 
     this.arrayOperaciones = [...this.arrayOperaciones, mostrar];
+
+    this.arrayOperaciones.forEach((element:any)=>{
+
+      this.conteneder.querySelector('.operation').innerText = element.operation;
+      this.conteneder.querySelector('.resultOperation').innerText = element.operation;
+
+    })
+      
+    };
   }
   
-}
+
