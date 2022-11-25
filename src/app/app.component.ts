@@ -26,7 +26,7 @@ export class AppComponent implements OnInit {
   estiloPos1:string;
   estiloPos2:string;
 
-  constructor(private rendere:Renderer2){
+  constructor(private renderer:Renderer2){
 
   }
 
@@ -120,6 +120,10 @@ export class AppComponent implements OnInit {
     containerCard.appendChild(verOperacion);
     containerCard.appendChild(verResultado);
    
+    this.renderer.appendChild(this.mostrarOperaciones.nativeElement, containerCard);
+
+    this.conteneder = containerCard;
+    
       
   }
   
