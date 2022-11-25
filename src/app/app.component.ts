@@ -123,8 +123,8 @@ export class AppComponent implements OnInit {
     this.renderer.appendChild(this.mostrarOperaciones.nativeElement, containerCard);
 
     this.conteneder = containerCard;
-    
-      
+
+    this.arrayOperaciones = [...this.arrayOperaciones, mostrar];
   }
   
 }
