@@ -14,23 +14,23 @@ export class AppComponent implements OnInit {
   d = "";
   e: "";
 
-  conteneder:any;
-  arrayOperaciones:any=[];
-  arrayResultado:any=[];
-  verOperaciones:any=[];
-  mostrarStorage:any;
-  buttonHistory:any;
-  btnActive="text-right";
-  calculadoraPos:any;
-  historyPos:any;
-  estiloPos1:string;
-  estiloPos2:string;
+  conteneder: any;
+  arrayOperaciones: any = [];
+  arrayResultado: any = [];
+  verOperaciones: any = [];
+  mostrarStorage: any;
+  buttonHistory: any;
+  btnActive = "text-right";
+  calculadoraPos: any;
+  historyPos: any;
+  estiloPos1: string;
+  estiloPos2: string;
 
-  constructor(private renderer:Renderer2){
+  constructor(private renderer: Renderer2) {
 
   }
 
-@ViewChild('mostrarOperciones',{static:true}) mostrarOperaciones!:ElementRef;
+  @ViewChild('mostrarOperciones', { static: true }) mostrarOperaciones!: ElementRef;
 
 
 
@@ -72,7 +72,8 @@ export class AppComponent implements OnInit {
 
   }
   result() {
-
+    var operacion;
+    var resultado;
     switch (this.b) {
 
       case '+':
@@ -80,24 +81,46 @@ export class AppComponent implements OnInit {
         this.screen = (parseInt(this.screen) + parseInt(this.c)).toString();
 
         //Cargar el history
-        const operacion = `${this.a},${this.b},${this.c}`;
-        const resultado = this.screen;
+        operacion = `${this.a},${this.b},${this.c}`;
+        resultado = this.screen;
+
+        this.crearHtml(operacion, resultado);
         break;
 
       case '-':
         this.screen = `${this.screen}= ${(parseInt(this.a) - parseInt(this.c)).toString()} `;
         this.screen = (parseInt(this.screen) - parseInt(this.c)).toString();
+
+        //Cargar el history
+        operacion = `${this.a},${this.b},${this.c}`;
+        resultado = this.screen;
+
+        this.crearHtml(operacion, resultado);
+
+
         break;
 
       case '*':
         this.screen = `${this.screen}= ${(parseInt(this.a) * parseInt(this.c)).toString()} `;
         this.screen = (parseInt(this.screen) * parseInt(this.c)).toString();
-        
+
+        //Cargar el history
+        operacion = `${this.a},${this.b},${this.c}`;
+        resultado = this.screen;
+
+        this.crearHtml(operacion, resultado);
+
         break;
 
       default:
         this.screen = `${this.screen}= ${(parseInt(this.a) / parseInt(this.c)).toString()} `;
         this.screen = (parseInt(this.screen) / parseInt(this.c)).toString();
+
+        //Cargar el history
+        operacion = `${this.a},${this.b},${this.c}`;
+        resultado = this.screen;
+
+        this.crearHtml(operacion, resultado);
         break;
 
     }
@@ -107,7 +130,7 @@ export class AppComponent implements OnInit {
 
   //Se crea de fomra dinámica el history mediante el DOM
 
-  crearHtml(operacion:string,resultado:string){
+  crearHtml(operacion: string, resultado: string) {
     const mostrar = {
       operacion,
       resultado
@@ -123,21 +146,21 @@ export class AppComponent implements OnInit {
 
     containerCard.appendChild(verOperacion);
     containerCard.appendChild(verResultado);
-   
+
     this.renderer.appendChild(this.mostrarOperaciones.nativeElement, containerCard);
 
     this.conteneder = containerCard;
 
     this.arrayOperaciones = [...this.arrayOperaciones, mostrar];
 
-    this.arrayOperaciones.forEach((element:any)=>{
+    this.arrayOperaciones.forEach((element: any) => {
 
       this.conteneder.querySelector('.operation').innerText = element.operation;
       this.conteneder.querySelector('.resultOperation').innerText = element.resultado;
 
     })
-      
-    };
-  }
-  
+
+  };
+}
+
 
