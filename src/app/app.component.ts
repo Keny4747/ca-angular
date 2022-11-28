@@ -78,6 +78,10 @@ export class AppComponent implements OnInit {
       case '+':
         this.screen = `${this.screen}= ${(parseInt(this.a) + parseInt(this.c)).toString()} `;
         this.screen = (parseInt(this.screen) + parseInt(this.c)).toString();
+
+        //Cargar el history
+        const operacion = `${this.a},${this.b},${this.c}`;
+        const resultado = this.screen;
         break;
 
       case '-':
