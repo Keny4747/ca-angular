@@ -4,4 +4,7 @@ body{
 
 .resultOperation{
     margin-top: -30px;
+    font-size: 40px;
+    font-weight: bold;
+    color: rgb(58, 220, 235);
 }
