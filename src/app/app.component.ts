@@ -81,7 +81,7 @@ export class AppComponent implements OnInit {
         this.screen = (parseInt(this.screen) + parseInt(this.c)).toString();
 
         //Cargar el history
-        operacion = `${this.a},${this.b},${this.c}`;
+        operacion = `${this.a}${this.b}${this.c}`;
         resultado = this.screen;
 
         this.crearHtml(operacion, resultado);
@@ -92,7 +92,7 @@ export class AppComponent implements OnInit {
         this.screen = (parseInt(this.screen) - parseInt(this.c)).toString();
 
         //Cargar el history
-        operacion = `${this.a},${this.b},${this.c}`;
+        operacion = `${this.a}${this.b}${this.c}`;
         resultado = this.screen;
 
         this.crearHtml(operacion, resultado);
@@ -105,7 +105,7 @@ export class AppComponent implements OnInit {
         this.screen = (parseInt(this.screen) * parseInt(this.c)).toString();
 
         //Cargar el history
-        operacion = `${this.a},${this.b},${this.c}`;
+        operacion = `${this.a}${this.b}${this.c}`;
         resultado = this.screen;
 
         this.crearHtml(operacion, resultado);
@@ -117,7 +117,7 @@ export class AppComponent implements OnInit {
         this.screen = (parseInt(this.screen) / parseInt(this.c)).toString();
 
         //Cargar el history
-        operacion = `${this.a},${this.b},${this.c}`;
+        operacion = `${this.a}${this.b}${this.c}`;
         resultado = this.screen;
 
         this.crearHtml(operacion, resultado);
