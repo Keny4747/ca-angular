@@ -1,3 +1,4 @@
+import { JsonPipe } from '@angular/common';
 import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
 
 @Component({
@@ -160,10 +161,12 @@ export class AppComponent implements OnInit {
 
     })
 
+    this.sincronizarStorage();
+
   };
 
   sincronizarStorage(){
-    localStorage.setItem('operaciones',);
+    localStorage.setItem('operaciones', JSON.stringify(this.arrayOperaciones));
   }
 }
 
