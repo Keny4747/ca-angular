@@ -36,7 +36,8 @@ export class AppComponent implements OnInit {
 
 
   ngOnInit(): void {
-
+    //verificacion de las variables del localStorage
+    this.verOperaciones = localStorage.getItem('operaciones');
   }
 
   //Calculadora
