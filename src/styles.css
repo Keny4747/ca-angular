@@ -8,3 +8,7 @@ body{
     font-weight: bold;
     color: rgb(58, 220, 235);
 }
+
+.operation{
+    font-size: 20px;
+}
