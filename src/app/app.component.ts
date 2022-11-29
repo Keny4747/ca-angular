@@ -168,6 +168,25 @@ export class AppComponent implements OnInit {
   sincronizarStorage(){
     localStorage.setItem('operaciones', JSON.stringify(this.arrayOperaciones));
   }
+
+  crearHtmlStorage(){
+    if(this.verOperaciones.length>0){
+      var containerCard = document.createElement('div');
+      var verOperacion = document.createElement('p');
+      var verResultado = document.createElement('p');
+  
+      containerCard.classList.add('conatienrCard');
+      verOperacion.classList.add('operation');
+      verResultado.classList.add('resultOperation');
+  
+      containerCard.appendChild(verOperacion);
+      containerCard.appendChild(verResultado);
+  
+      this.renderer.appendChild(this.mostrarOperaciones.nativeElement, containerCard);
+  
+      this.conteneder = containerCard;
+    }
+  }
 }
 
 
