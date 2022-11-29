@@ -185,6 +185,10 @@ export class AppComponent implements OnInit {
       this.renderer.appendChild(this.mostrarOperaciones.nativeElement, containerCard);
   
       this.conteneder = containerCard;
+
+      this.arrayResultado = JSON.parse(this.verOperaciones);
+
+      this.arrayResultado 
     }
   }
 }
