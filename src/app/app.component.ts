@@ -161,6 +161,10 @@ export class AppComponent implements OnInit {
     })
 
   };
+
+  sincronizarStorage(){
+    localStorage.setItem('operaciones',);
+  }
 }
 
 
