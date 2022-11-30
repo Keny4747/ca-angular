@@ -37,7 +37,13 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     //verificacion de las variables del localStorage
-    this.verOperaciones = localStorage.getItem('operaciones');
+    this.verOperaciones = localStorage.getItem('operaciones')||[];
+
+    //Se crea el elemento del history con las variables del storage
+
+    this.crearHtmlStorage(){
+      
+    }
   }
 
   //Calculadora
