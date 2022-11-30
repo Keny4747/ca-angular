@@ -42,7 +42,7 @@ export class AppComponent implements OnInit {
     //Se crea el elemento del history con las variables del storage
 
     this.crearHtmlStorage(){
-      
+
     }
   }
 
@@ -195,7 +195,9 @@ export class AppComponent implements OnInit {
 
       this.arrayResultado = JSON.parse(this.verOperaciones);
 
-      this.arrayResultado 
+      this.arrayResultado.forEach((element:any)=>{
+        
+      });
     }
   }
 }
