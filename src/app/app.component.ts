@@ -218,7 +218,8 @@ export class AppComponent implements OnInit {
         localStorage.removeItem('operaciones');
         Swal.fire({
           icon:'success',
-          title:'El historail se limplio correctamente!'
+          title:'El historail se limplio correctamente!',
+          confirmButtonText:'Aceptar'
         })
       })
     }
