@@ -220,6 +220,10 @@ export class AppComponent implements OnInit {
           icon:'success',
           title:'El historail se limplio correctamente!',
           confirmButtonText:'Aceptar'
+        }).then((result)=>{
+          if(result.value){
+            location.reload();
+          }
         })
       })
     }
