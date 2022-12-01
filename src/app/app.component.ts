@@ -1,6 +1,7 @@
 import { JsonPipe } from '@angular/common';
 import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
-import Swal from 'sweetalert';
+import Swal from 'sweetalert2';
+
 
 @Component({
   selector: 'app-root',
