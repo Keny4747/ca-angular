@@ -1,5 +1,6 @@
 import { JsonPipe } from '@angular/common';
 import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
+import Swal from 'sweetalert';
 
 @Component({
   selector: 'app-root',
@@ -203,6 +204,12 @@ export class AppComponent implements OnInit {
 
   limpiar(){
     
+    if(this.arrayOperaciones.length>0){
+      Swal.fire(
+        icon:'question',
+        title:'Desea limpiar el historial?'
+      )
+    }
   }
 }
 
