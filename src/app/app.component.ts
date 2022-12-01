@@ -226,6 +226,11 @@ export class AppComponent implements OnInit {
           }
         })
       })
+    }else{
+      Swal.fire({
+        icon:'info',
+        title:'El historial está limpio'
+      })
     }
   }
 }
