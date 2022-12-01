@@ -209,9 +209,14 @@ export class AppComponent implements OnInit {
       Swal.fire({
         icon:'question',
         title:'¿Desea limpiar el historial?',
-        showCancelButton:true
+        showCancelButton:true,
+        confirmButtonColor:'#3005d6',
+        confirmButtonText:'Aceptar',
+        allowOutsideClick:false
       }
-      )
+      ).then((result)=>{
+        localStorage.removeItem('operaciones');
+      })
     }
   }
 }
