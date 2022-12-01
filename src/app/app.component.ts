@@ -206,9 +206,10 @@ export class AppComponent implements OnInit {
   limpiar(){
     
     if(this.arrayOperaciones.length>0){
-      Swal.fire(
+      Swal.fire({
         icon:'question',
         title:'Desea limpiar el historial?'
+      }
       )
     }
   }
