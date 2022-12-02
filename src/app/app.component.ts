@@ -15,7 +15,7 @@ export class AppComponent implements OnInit {
   b: any;
   c: any;
   d = "";
-  e: "";
+  e= "";
 
   conteneder: any;
   arrayOperaciones: any = [];
@@ -38,6 +38,11 @@ export class AppComponent implements OnInit {
 
 
   ngOnInit(): void {
+
+    //Posicion del history inicial
+    this.buttonHistory=true;
+    this.btnActive='text-right';
+    
     //verificacion de las variables del localStorage
     this.verOperaciones = localStorage.getItem('operaciones')||[];
 
