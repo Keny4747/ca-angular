@@ -42,7 +42,7 @@ export class AppComponent implements OnInit {
     //Posicion del history inicial
     this.buttonHistory=true;
     this.btnActive='text-right';
-    
+
     //verificacion de las variables del localStorage
     this.verOperaciones = localStorage.getItem('operaciones')||[];
 
@@ -236,6 +236,19 @@ export class AppComponent implements OnInit {
         icon:'info',
         title:'El historial está limpio'
       })
+    }
+  }
+
+  //Cambia la posicion del contenido del history
+  cambiarPosicion(){
+    
+    if(this.buttonHistory){
+      this.buttonHistory = false;
+      this.btnActive = 'text-left';
+
+    }else{
+      this.buttonHistory = true;
+      this.btnActive = 'text-right';
     }
   }
 }
