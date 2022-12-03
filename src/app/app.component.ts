@@ -254,12 +254,15 @@ export class AppComponent implements OnInit {
 
 
   cambiarPosicionDiv(){
+
+
     if(this.calculadoraPos && !this.historyPos){
       
       this.calculadoraPos = false;
       this.historyPos=true;
       this.estiloPos1='';
       this.estiloPos2='';
+      
     }else{
       this.calculadoraPos=true;
       this.historyPos=false;
