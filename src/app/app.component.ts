@@ -251,6 +251,9 @@ export class AppComponent implements OnInit {
       this.btnActive = 'text-right';
     }
   }
+
+  
+
 }
 
 
