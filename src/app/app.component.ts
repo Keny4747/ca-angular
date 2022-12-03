@@ -261,7 +261,10 @@ export class AppComponent implements OnInit {
       this.estiloPos1='';
       this.estiloPos2='';
     }else{
-
+      this.calculadoraPos=true;
+      this.historyPos=false;
+      this.estiloPos1=' transform: translate(100%)';
+      this.estiloPos2=' transform: translate(100%)';
     }
   }
 }
