@@ -252,8 +252,14 @@ export class AppComponent implements OnInit {
     }
   }
 
-  
 
+  cambiarPosicionDiv(){
+    if(this.calculadoraPos && !this.historyPos){
+      
+    }else{
+      
+    }
+  }
 }
 
 
