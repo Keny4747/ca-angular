@@ -270,6 +270,8 @@ export class AppComponent implements OnInit {
       this.estiloPos2=' transform: translate(100%)';
     }
   }
+
+  
 }
 
 
